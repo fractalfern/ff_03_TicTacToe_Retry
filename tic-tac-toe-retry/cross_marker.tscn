@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cel7vyke0gm35"]
+
+[ext_resource type="Texture2D" uid="uid://clvkbv3bacqxs" path="res://assets/cross.png" id="1_85t2b"]
+
+[node name="CrossMarker" type="Sprite2D" unique_id=533314341]
+texture = ExtResource("1_85t2b")
