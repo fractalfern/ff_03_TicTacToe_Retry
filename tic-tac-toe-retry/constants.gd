@@ -1,3 +1,3 @@
 extends Node
 
-enum {PLAYER_CIRLCLE = 1, PLAYER_CROSS = -1}
+enum {PLAYER_CIRCLE = 1, PLAYER_CROSS = -1}

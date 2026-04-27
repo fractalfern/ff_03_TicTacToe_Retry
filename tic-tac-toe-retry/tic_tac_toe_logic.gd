@@ -5,6 +5,7 @@ const EMPTY_CELL: int = 0
 var grid: Array
 
 enum {COMPUTER_FIRST_CELL, COMPUTER_RANDOM, COMPUTER_HARD}
+enum {CIRCLE_WIN = 3, CROSS_WIN = -3}
 var difficulty: int
 
 func empty_grid() -> void:
@@ -75,6 +76,33 @@ func is_cell_empty(cell: Vector2i) -> bool:
 	return false
 	
 func get_winner() -> int:
-	#TODO
-	assert(false)
+	# Check rows
+	for row: int in grid.size():
+		var sum: int = grid[row][0] + grid[row][1] + grid[row][2]
+		if sum == CIRCLE_WIN:
+			return Constants.PLAYER_CIRCLE
+		elif sum == CROSS_WIN:
+			return Constants.PLAYER_CROSS
+
+	# Check columns
+	for col: int in grid[0].size():
+		var sum: int = grid[0][col] + grid[1][col] + grid[2][col]
+		if sum == CIRCLE_WIN:
+			return Constants.PLAYER_CIRCLE
+		elif sum == CROSS_WIN:
+			return Constants.PLAYER_CROSS
+
+	# Check diagonals
+	var diag1: int = grid[0][0] + grid[1][1] + grid[2][2]
+	if diag1 == CIRCLE_WIN:
+		return Constants.PLAYER_CIRCLE
+	elif diag1 == CROSS_WIN:
+		return Constants.PLAYER_CROSS
+
+	var diag2: int = grid[0][2] + grid[1][1] + grid[2][0]
+	if diag2 == CIRCLE_WIN:
+		return Constants.PLAYER_CIRCLE
+	elif diag2 == CROSS_WIN:
+		return Constants.PLAYER_CROSS
+
 	return 0

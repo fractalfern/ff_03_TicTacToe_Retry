@@ -36,7 +36,7 @@ func get_cell(input_position: Vector2) -> Vector2i:
 func place_marker(player: int, cell: Vector2i) -> void:
 	var marker: Node
 	
-	if player == Constants.PLAYER_CIRLCLE:
+	if player == Constants.PLAYER_CIRCLE:
 		marker = circle_marker.instantiate()
 	else: #player == Constants.PLAYER_CROSS:
 		marker = cross_marker.instantiate()

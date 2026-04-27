@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://r0rh4fhcnedk" path="res://assets/grid.png" id="3_k6nyc"]
 [ext_resource type="PackedScene" uid="uid://d2gm6v87fp4jh" path="res://circle_marker.tscn" id="5_107hy"]
 [ext_resource type="PackedScene" uid="uid://cel7vyke0gm35" path="res://cross_marker.tscn" id="6_ie7hh"]
+[ext_resource type="PackedScene" uid="uid://d32q0ac1by1rb" path="res://game_over_screen.tscn" id="7_ie7hh"]
 
 [node name="TicTaceToe_Game" type="Node2D" unique_id=79474767]
 script = ExtResource("1_d0v1l")
@@ -19,3 +20,8 @@ centered = false
 script = ExtResource("3_caf8l")
 circle_marker = ExtResource("5_107hy")
 cross_marker = ExtResource("6_ie7hh")
+
+[node name="GameOverScreen" parent="." unique_id=474424286 instance=ExtResource("7_ie7hh")]
+process_mode = 2
+
+[connection signal="restart" from="GameOverScreen" to="." method="_on_game_over_screen_restart"]
