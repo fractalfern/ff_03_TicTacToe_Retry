@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cany4j0wiva1r"]
+
+[ext_resource type="ButtonGroup" uid="uid://e88l4egit4lq" path="res://button_group_opponent_selector.tres" id="1_m6hec"]
+
+[node name="OpponentSelector" type="Node2D" unique_id=1475117216]
+
+[node name="Opponent_Human" type="CheckBox" parent="." unique_id=371007290]
+offset_left = 760.0
+offset_top = 334.00003
+offset_right = 916.0
+offset_bottom = 392.00003
+scale = Vector2(1.2, 1.2)
+theme_override_font_sizes/font_size = 28
+button_group = ExtResource("1_m6hec")
+text = "Human"
+
+[node name="Opponent_Comp_First" type="CheckBox" parent="." unique_id=262157975]
+offset_left = 760.0
+offset_top = 404.99997
+offset_right = 1071.0
+offset_bottom = 462.99997
+scale = Vector2(1.2, 1.2)
+theme_override_font_sizes/font_size = 28
+button_group = ExtResource("1_m6hec")
+text = "Computer - Easy"
+
+[node name="Opponent_Comp_Random" type="CheckBox" parent="." unique_id=1624614013]
+offset_left = 760.0
+offset_top = 473.00003
+offset_right = 1137.0
+offset_bottom = 531.0
+scale = Vector2(1.2, 1.2)
+theme_override_font_sizes/font_size = 28
+button_group = ExtResource("1_m6hec")
+text = "Computer - Medium"
+
+[node name="Opponent_Comp_Smart" type="CheckBox" parent="." unique_id=344627674]
+offset_left = 760.0
+offset_top = 542.0
+offset_right = 1079.0
+offset_bottom = 600.0
+scale = Vector2(1.2, 1.2)
+theme_override_font_sizes/font_size = 28
+button_group = ExtResource("1_m6hec")
+text = "Computer - Hard"
