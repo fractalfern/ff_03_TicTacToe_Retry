@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cany4j0wiva1r" path="res://Scenes/OpponentSelector/opponent_selector.tscn" id="8_mf0ku"]
 [ext_resource type="Script" uid="uid://v1nulov0skic" path="res://Scenes/TicTacToeGame/player_panel.gd" id="9_k8woe"]
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_xrlcn"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_k8woe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8woe"]
 bg_color = Color(1, 1, 1, 1)
@@ -42,7 +42,7 @@ cross_marker = ExtResource("6_wh2jp")
 process_mode = 2
 
 [node name="OpponentSelector" parent="." unique_id=1475117216 instance=ExtResource("8_mf0ku")]
-button_group = SubResource("ButtonGroup_xrlcn")
+button_group = SubResource("ButtonGroup_k8woe")
 
 [node name="PlayerPanel" type="Panel" parent="." unique_id=129931475]
 offset_left = 804.0

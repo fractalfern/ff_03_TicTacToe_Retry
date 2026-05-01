@@ -39,6 +39,7 @@ button_group = ExtResource("1_m6hec")
 text = "Computer - Lvl 2"
 
 [node name="OpponentCompSmart" type="CheckBox" parent="." unique_id=344627674]
+visible = false
 offset_left = 677.0
 offset_top = 539.0
 offset_right = 863.0

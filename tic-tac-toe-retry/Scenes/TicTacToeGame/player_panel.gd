@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 	print("Panel cell Size: ", cell_size)
 
-func place_marker(player: int) -> void:
+func update_marker(player: int) -> void:
 	if marker:
 		marker.queue_free()
 		
