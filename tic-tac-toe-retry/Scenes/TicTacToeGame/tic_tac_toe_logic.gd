@@ -36,16 +36,30 @@ func _ready() -> void:
 	empty_grid()
 
 func get_first_available_cell() -> Vector2i:
-	#TODO
-	assert(false)
 	var cell: Vector2i
+	
+	for row: int in grid.size():
+		for col: int in grid[row].size():
+			if grid[row][col] == EMPTY_CELL:
+				cell = Vector2i(col, row)
+				return cell
+	
 	return cell
 
-func get_random_available_cell() -> Vector2i:
-	#TODO
-	assert(false)
-	var cell: Vector2i
-	return cell
+func get_random_available_cell() -> Vector2i:	
+	var empty_cells: Array
+	
+	for row: int in grid.size():
+		for col: int in grid[row].size():
+			if grid[row][col] == EMPTY_CELL:
+				empty_cells.append(Vector2i(col,row))
+	
+	print("Empty Cells: ", empty_cells)
+	
+	var i: int = randi() % empty_cells.size()
+	print("Random: ", i)
+	
+	return empty_cells[i]
 
 func get_best_avaialable_cell() -> Vector2i:
 	#TODO
@@ -54,9 +68,6 @@ func get_best_avaialable_cell() -> Vector2i:
 	return cell
 
 func get_computer_move() -> Vector2i:
-	var row: int
-	var col: int
-	
 	var cell: Vector2i
 	
 	if opponent == COMPUTER_FIRST_CELL:
@@ -65,9 +76,11 @@ func get_computer_move() -> Vector2i:
 		cell = get_random_available_cell()
 	else: #opponent == COMPUTER_HARD
 		cell = get_best_avaialable_cell()
+		
+	print("Computer Move: ", cell)
 	
 	assert(cell != null)
-	return Vector2i(col, row)
+	return cell
 
 func is_cell_empty(cell: Vector2i) -> bool:
 	if grid[cell.y][cell.x] == EMPTY_CELL:
