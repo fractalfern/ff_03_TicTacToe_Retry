@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://d32q0ac1by1rb" path="res://Scenes/GameOverScreen/game_over_screen.tscn" id="7_jvtr2"]
 [ext_resource type="PackedScene" uid="uid://cany4j0wiva1r" path="res://Scenes/OpponentSelector/opponent_selector.tscn" id="8_mf0ku"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_xrlcn"]
+
 [node name="TicTacToeGame" type="Node2D" unique_id=79474767]
 script = ExtResource("1_xrlcn")
 
@@ -26,5 +28,7 @@ cross_marker = ExtResource("6_wh2jp")
 process_mode = 2
 
 [node name="OpponentSelector" parent="." unique_id=1475117216 instance=ExtResource("8_mf0ku")]
+button_group = SubResource("ButtonGroup_xrlcn")
 
 [connection signal="restart" from="GameOverScreen" to="." method="_on_game_over_screen_restart"]
+[connection signal="opponent_select" from="OpponentSelector" to="." method="_on_opponent_selector_opponent_select"]

@@ -4,9 +4,9 @@ const EMPTY_CELL: int = 0
 
 var grid: Array
 
-enum {COMPUTER_FIRST_CELL, COMPUTER_RANDOM, COMPUTER_HARD}
+enum {HUMAN, COMPUTER_FIRST_CELL, COMPUTER_RANDOM, COMPUTER_HARD}
 enum {CIRCLE_WIN = 3, CROSS_WIN = -3}
-var difficulty: int
+var opponent: int
 
 func empty_grid() -> void:
 	grid = [[0, 0, 0],
@@ -32,7 +32,7 @@ func print_grid() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	difficulty = COMPUTER_FIRST_CELL
+	opponent = HUMAN
 	empty_grid()
 
 func get_first_available_cell() -> Vector2i:
@@ -59,11 +59,11 @@ func get_computer_move() -> Vector2i:
 	
 	var cell: Vector2i
 	
-	if difficulty == COMPUTER_FIRST_CELL:
+	if opponent == COMPUTER_FIRST_CELL:
 		cell = get_first_available_cell()
-	elif difficulty == COMPUTER_RANDOM:
+	elif opponent == COMPUTER_RANDOM:
 		cell = get_random_available_cell()
-	else: #difficulty == COMPUTER_HARD
+	else: #opponent == COMPUTER_HARD
 		cell = get_best_avaialable_cell()
 	
 	assert(cell != null)

@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cany4j0wiva1r"]
 
+[ext_resource type="Script" uid="uid://bqbqhlc0tjwk2" path="res://Scenes/OpponentSelector/opponent_selector.gd" id="1_8j278"]
 [ext_resource type="ButtonGroup" uid="uid://e88l4egit4lq" path="res://Scenes/OpponentSelector/button_group_opponent_selector.tres" id="1_m6hec"]
 
 [node name="OpponentSelector" type="Node2D" unique_id=1475117216]
+script = ExtResource("1_8j278")
+button_group = ExtResource("1_m6hec")
 
 [node name="OpponentHuman" type="CheckBox" parent="." unique_id=371007290]
 offset_left = 636.0
@@ -10,7 +13,8 @@ offset_top = 246.0
 offset_right = 792.0
 offset_bottom = 293.0
 scale = Vector2(2, 2)
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 24
+button_pressed = true
 button_group = ExtResource("1_m6hec")
 text = "Human"
 
@@ -20,7 +24,7 @@ offset_top = 339.0
 offset_right = 884.0
 offset_bottom = 386.0
 scale = Vector2(2, 2)
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 24
 button_group = ExtResource("1_m6hec")
 text = "Computer - Lvl 1"
 
@@ -30,7 +34,7 @@ offset_top = 435.0
 offset_right = 884.0
 offset_bottom = 482.0
 scale = Vector2(2, 2)
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 24
 button_group = ExtResource("1_m6hec")
 text = "Computer - Lvl 2"
 
@@ -40,6 +44,6 @@ offset_top = 529.0
 offset_right = 884.0
 offset_bottom = 576.0
 scale = Vector2(2, 2)
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 24
 button_group = ExtResource("1_m6hec")
 text = "Computer - Lvl 3"

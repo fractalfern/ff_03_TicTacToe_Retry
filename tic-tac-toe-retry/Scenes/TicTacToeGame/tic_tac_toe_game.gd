@@ -6,10 +6,10 @@ extends Node2D
 
 var current_player: int
 var is_user_turn: bool
-var has_computer_opponent: bool
 var num_turns: int
 
 func new_game() -> void:	
+	print("Opponent: ", ticTacToe_Logic.opponent)
 	get_tree().paused = false
 	
 	ticTacToe_Logic.empty_grid()
@@ -17,7 +17,6 @@ func new_game() -> void:
 	
 	current_player = Constants.PLAYER_CIRCLE
 	is_user_turn = true
-	has_computer_opponent = false
 	num_turns = 0
 	
 	get_tree().call_group("cross_markers", "queue_free")
@@ -98,7 +97,7 @@ func _input(event: InputEvent) -> void:
 			var winner: int = ticTacToe_Logic.get_winner()
 			
 			if winner == 0 && num_turns != 9: 
-				if has_computer_opponent:
+				if ticTacToe_Logic.opponent != ticTacToe_Logic.HUMAN:
 					process_computer_turn()
 					
 					# Check for winner after computer turn
@@ -110,4 +109,21 @@ func _input(event: InputEvent) -> void:
 			is_user_turn = true
 
 func _on_game_over_screen_restart() -> void:
+	new_game()
+
+func _on_opponent_selector_opponent_select(button: BaseButton) -> void:
+	print("Button Pressed: " + button.name)
+	
+	#TODO this is horrible if I rename them, but not sure what else to do
+	if button.name == "OpponentHuman":
+		ticTacToe_Logic.opponent = ticTacToe_Logic.HUMAN
+	elif button.name == "OpponentCompFirst":
+		ticTacToe_Logic.opponent = ticTacToe_Logic.COMPUTER_FIRST_CELL
+	elif button.name == "OpponentCompRandom":
+		ticTacToe_Logic.opponent = ticTacToe_Logic.COMPUTER_RANDOM
+	elif button.name == "OpponentCompSmart":
+		ticTacToe_Logic.opponent = ticTacToe_Logic.COMPUTER_HARD
+	else:
+		assert(false)
+	
 	new_game()
