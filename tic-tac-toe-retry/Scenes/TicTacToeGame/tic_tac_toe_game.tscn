@@ -8,8 +8,22 @@
 [ext_resource type="PackedScene" uid="uid://cel7vyke0gm35" path="res://Scenes/cross_marker.tscn" id="6_wh2jp"]
 [ext_resource type="PackedScene" uid="uid://d32q0ac1by1rb" path="res://Scenes/GameOverScreen/game_over_screen.tscn" id="7_jvtr2"]
 [ext_resource type="PackedScene" uid="uid://cany4j0wiva1r" path="res://Scenes/OpponentSelector/opponent_selector.tscn" id="8_mf0ku"]
+[ext_resource type="Script" uid="uid://v1nulov0skic" path="res://Scenes/TicTacToeGame/player_panel.gd" id="9_k8woe"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_xrlcn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8woe"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
 
 [node name="TicTacToeGame" type="Node2D" unique_id=79474767]
 script = ExtResource("1_xrlcn")
@@ -29,6 +43,25 @@ process_mode = 2
 
 [node name="OpponentSelector" parent="." unique_id=1475117216 instance=ExtResource("8_mf0ku")]
 button_group = SubResource("ButtonGroup_xrlcn")
+
+[node name="PlayerPanel" type="Panel" parent="." unique_id=129931475]
+offset_left = 804.0
+offset_top = 57.0
+offset_right = 1004.0
+offset_bottom = 257.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_k8woe")
+script = ExtResource("9_k8woe")
+circle_marker = ExtResource("5_nhyv1")
+cross_marker = ExtResource("6_wh2jp")
+
+[node name="PlayerLabel" type="Label" parent="." unique_id=1799989175]
+offset_left = 804.0
+offset_top = 13.0
+offset_right = 1004.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 28
+text = "Player:"
+horizontal_alignment = 1
 
 [connection signal="restart" from="GameOverScreen" to="." method="_on_game_over_screen_restart"]
 [connection signal="opponent_select" from="OpponentSelector" to="." method="_on_opponent_selector_opponent_select"]

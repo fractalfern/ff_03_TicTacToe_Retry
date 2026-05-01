@@ -3,6 +3,7 @@ extends Node2D
 @onready var game_logic: Node = $TicTacToeLogic
 @onready var grid_sprite: Sprite2D = $GridSprite
 @onready var game_over_screen: CanvasLayer = $GameOverScreen
+@onready var player_panel: Panel = $PlayerPanel
 
 var current_player: int
 var is_user_turn: bool
@@ -23,6 +24,8 @@ func new_game() -> void:
 	get_tree().call_group("circle_markers", "queue_free")
 	
 	game_over_screen.hide()
+	
+	player_panel.place_marker(current_player)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -60,6 +63,8 @@ func process_turn(cell: Vector2i) -> void:
 	
 	num_turns += 1
 	swap_current_player()
+	
+	player_panel.place_marker(current_player)
 
 func process_user_turn(cell: Vector2i) -> void:
 	# We've determined to play the user's turn. Immediately flip user_turn
