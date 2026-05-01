@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2gm6v87fp4jh"]
 
-[ext_resource type="Texture2D" uid="uid://cacph0n2341cw" path="res://assets/circle.png" id="1_hnlnh"]
+[ext_resource type="Texture2D" uid="uid://cacph0n2341cw" path="res://Assets/circle.png" id="1_hnlnh"]
 
 [node name="CircleMarker" type="Sprite2D" unique_id=242659196 groups=["circle_markers"]]
 texture = ExtResource("1_hnlnh")

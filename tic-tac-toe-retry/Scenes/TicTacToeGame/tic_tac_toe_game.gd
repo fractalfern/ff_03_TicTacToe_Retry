@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var ticTacToe_Logic: Node = $TicTacToe_Logic
-@onready var ticTacToe_Board_Graphic: Sprite2D = $TicTacToe_Board_Graphic
+@onready var ticTacToe_Logic: Node = $TicTacToeLogic
+@onready var ticTacToe_Board_Graphic: Sprite2D = $TicTacToeBoardGraphic
 @onready var gameOverScreen: CanvasLayer = $GameOverScreen
 
 var current_player: int
@@ -94,11 +94,15 @@ func _input(event: InputEvent) -> void:
 		if ticTacToe_Logic.is_cell_empty(cell):		
 			process_user_turn(cell)
 		
+			# Check for winner after human turn
 			var winner: int = ticTacToe_Logic.get_winner()
 			
 			if winner == 0 && num_turns != 9: 
 				if has_computer_opponent:
 					process_computer_turn()
+					
+					# Check for winner after computer turn
+					winner = ticTacToe_Logic.get_winner()
 			
 			if winner != 0 || num_turns == 9:
 				handle_game_over(winner)

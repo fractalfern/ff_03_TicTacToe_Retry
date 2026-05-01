@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cany4j0wiva1r"]
 
-[ext_resource type="ButtonGroup" uid="uid://e88l4egit4lq" path="res://button_group_opponent_selector.tres" id="1_m6hec"]
+[ext_resource type="ButtonGroup" uid="uid://e88l4egit4lq" path="res://Scenes/OpponentSelector/button_group_opponent_selector.tres" id="1_m6hec"]
 
 [node name="OpponentSelector" type="Node2D" unique_id=1475117216]
 
