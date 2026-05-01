@@ -94,10 +94,12 @@ func _input(event: InputEvent) -> void:
 		if ticTacToe_Logic.is_cell_empty(cell):		
 			process_user_turn(cell)
 		
-			if has_computer_opponent:
-				process_computer_turn()
-			
 			var winner: int = ticTacToe_Logic.get_winner()
+			
+			if winner == 0 && num_turns != 9: 
+				if has_computer_opponent:
+					process_computer_turn()
+			
 			if winner != 0 || num_turns == 9:
 				handle_game_over(winner)
 			
