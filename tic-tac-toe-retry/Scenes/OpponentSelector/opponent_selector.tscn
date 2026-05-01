@@ -8,42 +8,42 @@ script = ExtResource("1_8j278")
 button_group = ExtResource("1_m6hec")
 
 [node name="OpponentHuman" type="CheckBox" parent="." unique_id=371007290]
-offset_left = 636.0
-offset_top = 246.0
-offset_right = 792.0
-offset_bottom = 293.0
+offset_left = 677.0
+offset_top = 322.0
+offset_right = 862.0
+offset_bottom = 358.0
 scale = Vector2(2, 2)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 button_pressed = true
 button_group = ExtResource("1_m6hec")
 text = "Human"
 
 [node name="OpponentCompFirst" type="CheckBox" parent="." unique_id=262157975]
-offset_left = 636.0
-offset_top = 339.0
-offset_right = 884.0
-offset_bottom = 386.0
+offset_left = 677.0
+offset_top = 396.0
+offset_right = 863.0
+offset_bottom = 432.0
 scale = Vector2(2, 2)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 button_group = ExtResource("1_m6hec")
 text = "Computer - Lvl 1"
 
 [node name="OpponentCompRandom" type="CheckBox" parent="." unique_id=1624614013]
-offset_left = 636.0
-offset_top = 435.0
-offset_right = 884.0
-offset_bottom = 482.0
+offset_left = 677.0
+offset_top = 467.0
+offset_right = 863.0
+offset_bottom = 503.0
 scale = Vector2(2, 2)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 button_group = ExtResource("1_m6hec")
 text = "Computer - Lvl 2"
 
 [node name="OpponentCompSmart" type="CheckBox" parent="." unique_id=344627674]
-offset_left = 636.0
-offset_top = 529.0
-offset_right = 884.0
-offset_bottom = 576.0
+offset_left = 677.0
+offset_top = 539.0
+offset_right = 863.0
+offset_bottom = 575.0
 scale = Vector2(2, 2)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 button_group = ExtResource("1_m6hec")
 text = "Computer - Lvl 3"
