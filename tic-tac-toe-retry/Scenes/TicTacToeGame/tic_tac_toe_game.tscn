@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cnn216fafemdl" path="res://Scenes/TicTacToeGame/tic_tac_toe_game.gd" id="1_xrlcn"]
 [ext_resource type="Script" uid="uid://mtates14bg3j" path="res://Scenes/TicTacToeGame/tic_tac_toe_logic.gd" id="2_k8woe"]
 [ext_resource type="Texture2D" uid="uid://r0rh4fhcnedk" path="res://Assets/grid.png" id="3_bt2wx"]
-[ext_resource type="Script" uid="uid://cqmqk3ob3aeml" path="res://Scenes/TicTacToeGame/tic_tac_toe_board_graphic.gd" id="4_uh3ur"]
+[ext_resource type="Script" uid="uid://cqmqk3ob3aeml" path="res://Scenes/TicTacToeGame/grid_sprite.gd" id="4_uh3ur"]
 [ext_resource type="PackedScene" uid="uid://d2gm6v87fp4jh" path="res://Scenes/circle_marker.tscn" id="5_nhyv1"]
 [ext_resource type="PackedScene" uid="uid://cel7vyke0gm35" path="res://Scenes/cross_marker.tscn" id="6_wh2jp"]
 [ext_resource type="PackedScene" uid="uid://d32q0ac1by1rb" path="res://Scenes/GameOverScreen/game_over_screen.tscn" id="7_jvtr2"]
@@ -17,7 +17,7 @@ script = ExtResource("1_xrlcn")
 [node name="TicTacToeLogic" type="Node" parent="." unique_id=519617084]
 script = ExtResource("2_k8woe")
 
-[node name="TicTacToeBoardGraphic" type="Sprite2D" parent="." unique_id=1827005516]
+[node name="GridSprite" type="Sprite2D" parent="." unique_id=1827005516]
 texture = ExtResource("3_bt2wx")
 centered = false
 script = ExtResource("4_uh3ur")
